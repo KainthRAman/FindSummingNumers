@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace test_preprtion
 {
@@ -11,34 +12,52 @@ namespace test_preprtion
         static void Main(string[] args)
 
         {
-            new GenerateList().Run(57);
+            new GeneralList().Run(57);
         }
     }
-    class GenerateList
+    class GeneralList
     {
         const int LEN = 100;
-        ArrayList ListQ;
+        public ArrayList ListQ;
+        int AddUpToNumber = 0;
         public void Run(int AddUpToNumber)
+
         {
             Random r = new Random();
-
             ListQ = new ArrayList();
-
             for (int i = 0; i < LEN; i++)
             {
                 ListQ.Add(r.Next(100));
             }
+            this.findTwoNumbersThatAddUpTo();
+        }
 
-            this.findTwoNumbersThatAddUpTo(AddUpToNumber);
-        }
-    
-        private void findTwoNumbersThatAddUpTo(int addUpToNumber)
+
+        public void findTwoNumbersThatAddUpTo()
         {
-            throw new NotImplementedException();
+            foreach (int num1 in ListQ)
+            {
+                int a, b;
+                a = num1;
+                foreach (int num2 in ListQ)
+                {
+                    b = num2;
+                    if (a + b == 57)
+                    {
+                        Console.WriteLine("The Perfect match is found. Numbers are: " + a + " " + b);
+                    }
+                }
+
+
+            }
+            Console.ReadLine();
         }
-                
+
+
+
+
     }
-          
 }
+
     
 
