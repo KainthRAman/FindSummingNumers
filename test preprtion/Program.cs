@@ -9,10 +9,11 @@ namespace test_preprtion
     class Program
     {
         static void Main(string[] args)
-        
+
         {
             new GenerateList().Run(57);
         }
+    }
         class GenerateList
         {
             const int LEN = 100;
@@ -20,15 +21,22 @@ namespace test_preprtion
             public void Run(int AddUpToNumber)
             {
                 Random r = new Random();
+
                 ListQ = new ArrayList();
-                for (int i =0; i< LEN; i++)
+
+                for (int i =0; i< LEN; i++) 
                 {
-                    ListQ.Add(r.Next(100));
+                    ListQ.Add(r.Next(100)); }
+
                     this.findTwoNumbersThatAddUpTo(AddUpToNumber);
                 }
+        private void findTwoNumbersThatAddUpTo(int addUpToNumber)
+        {
+            throw new NotImplementedException();
+        }
                 
             }
           
         }
-    }
+    
 }
