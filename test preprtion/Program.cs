@@ -14,29 +14,31 @@ namespace test_preprtion
             new GenerateList().Run(57);
         }
     }
-        class GenerateList
+    class GenerateList
+    {
+        const int LEN = 100;
+        ArrayList ListQ;
+        public void Run(int AddUpToNumber)
         {
-            const int LEN = 100;
-            ArrayList ListQ;
-            public void Run(int AddUpToNumber)
+            Random r = new Random();
+
+            ListQ = new ArrayList();
+
+            for (int i = 0; i < LEN; i++)
             {
-                Random r = new Random();
+                ListQ.Add(r.Next(100));
+            }
 
-                ListQ = new ArrayList();
-
-                for (int i =0; i< LEN; i++) 
-                {
-                    ListQ.Add(r.Next(100)); }
-
-                    this.findTwoNumbersThatAddUpTo(AddUpToNumber);
-                }
+            this.findTwoNumbersThatAddUpTo(AddUpToNumber);
+        }
+    
         private void findTwoNumbersThatAddUpTo(int addUpToNumber)
         {
             throw new NotImplementedException();
         }
                 
-            }
+    }
           
-        }
-    
 }
+    
+
