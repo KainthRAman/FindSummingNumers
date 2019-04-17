@@ -19,8 +19,16 @@ namespace test_preprtion
             ArrayList ListQ;
             public void Run(int AddUpToNumber)
             {
-               
+                Random r = new Random();
+                ListQ = new ArrayList();
+                for (int i =0; i< LEN; i++)
+                {
+                    ListQ.Add(r.Next(100));
+                    this.findTwoNumbersThatAddUpTo(AddUpToNumber);
+                }
+                
             }
+          
         }
     }
 }
